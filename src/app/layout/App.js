@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from 'react';
-import EventDashboard from '../../features/event/EventDashboard/EventDashboard';
-import NavBar from '../../features/nav/NavBar';
-import { Container } from 'semantic-ui-react';
+import AccordionExampleStandard from '../../features/test/Accordion';
+import { Button } from 'semantic-ui-react';
+import CheckboxExampleRadioGroup from '../../features/test/GroupedCheckbox';
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <NavBar />
-        <Container className='main'>
-          <EventDashboard />
-        </Container>
+        <Button>test</Button>
+        <AccordionExampleStandard>
+        </AccordionExampleStandard>
+        <CheckboxExampleRadioGroup />
+        
       </Fragment>
     );
   }
