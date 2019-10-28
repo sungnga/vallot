@@ -1,55 +1,42 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchVoterInfo } from '../actions'
 
-import { withRouter } from 'react-router-dom';
-import { fetchVoterInfo } from '.././actions';
+class AddressForm extends Component {
 
-class AddressForm extends React.Component {
-  state = {
-    address: ''
-  };
+    state = {
+        address: '',
+    }
+    
+    handleChange = event => {
+        this.setState({
+          address: event.target.value
+        })
+      }
+    
+      handleSubmit = event => {
+        event.preventDefault()
+        this.props.fetchVoterInfo(this.state.address)
+        this.setState({
+          address: ""
+        })
+      }
 
-  handleChange = event => {
-    this.setState({
-      address: event.target.value
-    });
-  };
+      render(){
+        return (
+          <div className='ui container'>
+            <form className="ui form error" onSubmit={this.handleSubmit}>
+                <label><strong>Enter A Valid Residential Address</strong></label><br/>
+                <input type="text" onChange={this.handleChange} placeholder="Enter Address..."></input>
+                <button className='ui button teal'>Fetch My Ballot</button>
+            </form>
+          </div>
+        )
+      }
+    }
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.fetchVoterInfo(this.state.address);
-    this.setState({
-      address: ''
-    });
-  };
+    const mapStateToProps = state => {
+        return {address: state.voterInfo.address}
+       }
 
-  render() {
-    return (
-      <div className='address-form'>
-        <form className='form' onSubmit={this.handleSubmit}>
-          <label>
-            <strong>Enter A Valid Residential Address</strong>
-          </label>
-          <br />
-          <input
-            type='text'
-            onChange={this.handleChange}
-            placeholder='Enter Address...'
-          ></input>
-          <input type='submit' value='Get My Voting Information' />
-        </form>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return { address: state.voterInfo };
-};
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { fetchVoterInfo }
-  )(AddressForm)
-);
+export default connect(mapStateToProps, {fetchVoterInfo})(AddressForm)

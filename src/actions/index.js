@@ -1,13 +1,12 @@
 import googleCivic from '../apis/googleCivic';
 
-export const fetchVoterInfo = (formValues) => async dispatch => {
+export const fetchVoterInfo = address => async dispatch => {
   const response = await googleCivic.get('/voterinfo', {
     params: {
-      address: formValues,
+      address: address,
       key: 'AIzaSyBXGif7H_Pk277CIEFQBDRPnvwTPQbw-tk'
     }
   });
-
+// console.log(response.data)
   dispatch({ type: 'FETCH_VOTERINFO', payload: response.data });
 };
-
