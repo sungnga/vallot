@@ -3,6 +3,6 @@ import { reducer as formReducer } from 'redux-form';
 import voterInfoReducer from './voterInfoReducer';
 
 export default combineReducers({
-  voterInfo: voterInfoReducer,
+  voterResult: voterInfoReducer,
   form: formReducer
 });

@@ -2,7 +2,7 @@ const voterInfoReducer = (
   state = {
     loading: false,
     address: '',
-    voterInfoResult: []
+    voterResult: []
   },
   action
 ) => {
@@ -11,7 +11,7 @@ const voterInfoReducer = (
       return { ...state, address: action.address, loading: true };
 
     case 'FETCH_VOTERINFO':
-      return { ...state, loading: false, voterInfoResult: action.payload };
+      return { ...state, loading: false, voterResult: action.payload };
 
     default:
       return state;

@@ -1,42 +1,53 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchVoterInfo } from '../actions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchVoterInfo } from '../actions';
 
 class AddressForm extends Component {
+  state = {
+    address: ''
+  };
 
-    state = {
-        address: '',
-    }
-    
-    handleChange = event => {
-        this.setState({
-          address: event.target.value
-        })
-      }
-    
-      handleSubmit = event => {
-        event.preventDefault()
-        this.props.fetchVoterInfo(this.state.address)
-        this.setState({
-          address: ""
-        })
-      }
+  onInputChange = event => {
+    this.setState({
+      address: event.target.value
+    });
+  };
 
-      render(){
-        return (
-          <div className='ui container'>
-            <form className="ui form error" onSubmit={this.handleSubmit}>
-                <label><strong>Enter A Valid Residential Address</strong></label><br/>
-                <input type="text" onChange={this.handleChange} placeholder="Enter Address..."></input>
-                <button className='ui button teal'>Fetch My Ballot</button>
-            </form>
-          </div>
-        )
-      }
-    }
+  onFormSubmit = event => {
+    event.preventDefault();
+    this.props.fetchVoterInfo(this.state.address);
+    this.setState({
+      address: ''
+    });
+  };
 
-    const mapStateToProps = state => {
-        return {address: state.voterInfo.address}
-       }
+  render() {
+    return (
+      <div className='ui address-form'>
+        <form className='ui form error' onSubmit={this.onFormSubmit}>
+          <label className='header'>
+            <strong>Enter A Valid Residential Address</strong>
+          </label>
+          <br />
+          <input
+            style={{ width: 500, height: 50 }}
+            type='text'
+            onChange={this.onInputChange}
+            placeholder='Enter Address...'
+          ></input>
+          <br />
+          <button className='ui button large teal'>Fetch My Ballot</button>
+        </form>
+      </div>
+    );
+  }
+}
 
-export default connect(mapStateToProps, {fetchVoterInfo})(AddressForm)
+const mapStateToProps = state => {
+  return { address: state.voterResult.address };
+};
+
+export default connect(
+  mapStateToProps,
+  { fetchVoterInfo }
+)(AddressForm);
