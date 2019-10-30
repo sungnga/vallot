@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-class MeasureItem extends Component {
-    render() {
-        return (
-            <div>
-                Measure item
-            </div>
-        )
-    }
-}
+const MeasureItem = props => {
+  if (props.refTitle) {
+    return <div className='list-item item'>{props.refTitle}</div>;
+  } else return null;
+};
 
-export default MeasureItem
+export default MeasureItem;

@@ -23,10 +23,12 @@ class AddressForm extends Component {
 
   render() {
     return (
-      <div className='ui address-form'>
-        <form className='ui form error' onSubmit={this.onFormSubmit}>
+      <div className='ui container'>
+        <h1 className='intro-title'>Welcome to Vallot</h1>
+        <h2 className='intro-summary'>Vallot allows you to retrieve a sample election ballot by providing a valid residential address. You can see what is on your ballot and learn more about your candidates and local measures. Create an account to save your progress.</h2>
+        <form className='ui form error address-form' onSubmit={this.onFormSubmit}>
           <label className='header'>
-            <strong>Enter A Valid Residential Address</strong>
+            <strong>Enter A Residential Address</strong>
           </label>
           <br />
           <input

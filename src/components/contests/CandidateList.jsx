@@ -5,11 +5,11 @@ const CandidateList = props => {
   if (props.office) {
     return (
       <div className='contest'>
-            <div className='header item'>
-                {props.office}
-          {/* {props.office} in {props.district} */}
+        <div className='header item'>
+          {props.office}
+          {props.office} in {props.district}
         </div>
-        {/* <div className='candidates'>
+        <div className='candidates'>
           {props.candidates.map(x => (
             <Candidate
               key={x.name}
@@ -18,7 +18,7 @@ const CandidateList = props => {
               channels={x.channels}
             />
           ))}
-        </div> */}
+        </div>
       </div>
     );
   } else return null;
