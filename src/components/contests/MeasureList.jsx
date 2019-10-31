@@ -10,18 +10,16 @@ const MeasureList = props => {
       <Menu pointing fluid vertical>
         <h1 className='candidates-h1'>Local Measures</h1>
 
-
-            {measures.map(x => (
-              <MeasureItem
-                key={x.referendumTitle}
-                refTitle={x.referendumTitle}
-                refSubtitle={x.referendumSubtitle}
-                refText={x.referendumText}
-                voterInfo={props.voterInfo}
-              />
-            ))}
-
-
+        {measures.map(x => (
+          <MeasureItem
+            key={x.referendumTitle}
+            refTitle={x.referendumTitle}
+            refSubtitle={x.referendumSubtitle}
+            refText={x.referendumText}
+            onListItemSelect={props.onListItemSelect}
+            voterInfo={props.voterInfo}
+          />
+        ))}
       </Menu>
     );
   } else {

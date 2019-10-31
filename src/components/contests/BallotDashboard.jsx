@@ -4,7 +4,7 @@ import OfficeList from './OfficeList';
 import MeasureList from './MeasureList';
 import { Grid } from 'semantic-ui-react';
 import CandidateList from './CandidateList';
-import MeasureItemDetail from './MeasureItemDetail';
+import MeasureDetail from './MeasureForm';
 
 class BallotDashboard extends Component {
   state = {
@@ -31,8 +31,8 @@ class BallotDashboard extends Component {
           />
         </Grid.Column>
         <Grid.Column width={11}>
-          <CandidateList />
-          <MeasureItemDetail />
+          <CandidateList voterResult={voterResult[2]} />
+          <MeasureDetail voterResult={voterResult[2]} />
         </Grid.Column>
       </Grid>
     );

@@ -1,9 +1,12 @@
 import React from 'react';
+import MeasureItemDetail from './MeasureForm';
 
-const MeasureItem = props => {
-  if (props.refTitle) {
-    return <div className='list-item item'>{props.refTitle}</div>;
-  } else return null;
+const MeasureItem = ({ onListItemSelect, refTitle, refText }) => {
+  return (
+    <div onClick={() => onListItemSelect()} className='list-item item'>
+          {refTitle}
+    </div>
+  );
 };
 
 export default MeasureItem;

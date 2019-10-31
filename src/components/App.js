@@ -4,7 +4,7 @@ import AddressForm from './AddressForm';
 import BallotDashboard from './contests/BallotDashboard';
 import Header from './Header';
 import { Container } from 'semantic-ui-react';
-import MeasureItemDetail from './contests/MeasureItemDetail';
+import MeasureItemDetail from './contests/MeasureForm';
 import CandidateList from './contests/CandidateList';
 
 class App extends Component {

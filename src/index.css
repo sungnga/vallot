@@ -103,8 +103,8 @@ body {
     margin-bottom: 30px;
 }
 
-.address-form.label {
-    font-size: 2em;
+.ui.form {
+    font-size: 1.3rem;
 }
 
 /* end of address form */
