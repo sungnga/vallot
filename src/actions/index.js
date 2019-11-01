@@ -7,7 +7,7 @@ export const fetchVoterInfo = address => async dispatch => {
       key: 'AIzaSyBXGif7H_Pk277CIEFQBDRPnvwTPQbw-tk'
     }
   });
-// console.log(response.data)
+  // console.log(response.data)
   dispatch({ type: 'FETCH_VOTERINFO', payload: response.data });
 };
 
@@ -15,5 +15,5 @@ export const selectVideo = item => {
   return {
     type: 'VIDEO_SELECTED',
     payload: item
-  }
-}
+  };
+};

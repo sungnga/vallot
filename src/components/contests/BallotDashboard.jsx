@@ -8,6 +8,11 @@ import MeasureForm from './MeasureForm';
 class BallotDashboard extends Component {
   render() {
     const { voterResult } = this.props;
+
+    if (!voterResult) {
+      return <div>Please enter a valid address</div>;
+    }
+
     return (
       <Grid className='ballot-dashboard'>
         <Grid.Column width={5}>

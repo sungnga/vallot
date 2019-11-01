@@ -1,5 +1,4 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
 import OfficeItem from './OfficeItem';
 
 const OfficeList = props => {
