@@ -7,18 +7,18 @@ class Header extends Component {
       <Menu inverted fixed='top'>
         <Container>
           <Menu.Item header>
-            <img src='assets/logo.png' alt='logo' />
+            <i class='check square outline icon big'></i>
             Vallot
           </Menu.Item>
 
           <Menu.Item position='right'>
             <Button basic inverted content='Login' />
-            <Button
+            {/* <Button
               basic
               inverted
               content='Sign Out'
               style={{ marginLeft: '0.5em' }}
-            />
+            /> */}
           </Menu.Item>
         </Container>
       </Menu>
