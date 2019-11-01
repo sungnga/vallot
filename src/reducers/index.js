@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
 import voterInfoReducer from './voterInfoReducer';
+import selectedVideoReducer from './selectedVideoReducer';
 
 export default combineReducers({
   voterResult: voterInfoReducer,
-  form: formReducer
+  selectedVideo: selectedVideoReducer
 });

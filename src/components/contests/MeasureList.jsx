@@ -7,8 +7,8 @@ const MeasureList = props => {
 
   if (measures) {
     return (
-      <Menu pointing fluid vertical>
-        <h1 className='candidates-h1'>Local Measures</h1>
+      <div className='ui fluid vertical menu'>
+        <h1 className='ui blue header center aligned menu-head'>Local Measures</h1>
 
         {measures.map(x => (
           <MeasureItem
@@ -16,11 +16,12 @@ const MeasureList = props => {
             refTitle={x.referendumTitle}
             refSubtitle={x.referendumSubtitle}
             refText={x.referendumText}
-            onListItemSelect={props.onListItemSelect}
-            voterInfo={props.voterInfo}
+            voterResult={props.voterResult}
           />
         ))}
-      </Menu>
+
+      </div>
+      
     );
   } else {
     return null;

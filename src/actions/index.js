@@ -10,3 +10,10 @@ export const fetchVoterInfo = address => async dispatch => {
 // console.log(response.data)
   dispatch({ type: 'FETCH_VOTERINFO', payload: response.data });
 };
+
+export const selectVideo = item => {
+  return {
+    type: 'VIDEO_SELECTED',
+    payload: item
+  }
+}

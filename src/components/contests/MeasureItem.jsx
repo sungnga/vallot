@@ -1,12 +1,16 @@
 import React from 'react';
-import MeasureItemDetail from './MeasureForm';
+import { connect } from 'react-redux';
+import { selectVideo } from '../../actions';
 
-const MeasureItem = ({ onListItemSelect, refTitle, refText }) => {
-  return (
-    <div onClick={() => onListItemSelect()} className='list-item item'>
-          {refTitle}
-    </div>
-  );
+const MeasureItem = props => {
+  if (props.refTitle) {
+    return <div onClick={() => props.selectVideo(props.refTitle)} className='ui item list-item'>
+      {props.refTitle}
+    </div>;
+  } else return null;
 };
 
-export default MeasureItem;
+export default connect(
+  null,
+  { selectVideo }
+)(MeasureItem);

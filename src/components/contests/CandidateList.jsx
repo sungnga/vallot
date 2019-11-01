@@ -1,13 +1,12 @@
 import React from 'react';
-import Candidate from './Candidate';
 
 const CandidateList = (props) => {
-
+console.log(props.voterResult.election)
 const candidates = props.voterResult.contests
     return (
       <div className='contest'>
         <div className='header item'>
-          {props.office} in {props.district}
+          {/* {props.voterResult.election.id} in {props.voterResult.district} */}
         </div>
         <div className='candidates'>
           {/* {candidatess.map(x => (

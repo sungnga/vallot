@@ -80,9 +80,12 @@ body {
 
 .ui.menu:not(.vertical) .item > .button {
   margin-left: 0.5em;
-} */
+} 
 
 /* address form */
+.address-container {
+  margin-bottom: 20px;
+}
 .ui.form.input {
     display: flex;
     flex-direction: column;
@@ -100,11 +103,12 @@ body {
     align-items: center;
     text-align: center;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .ui.form {
     font-size: 1.3rem;
+    color: #333333;
 }
 
 /* end of address form */
@@ -116,15 +120,43 @@ body {
     margin-bottom: 3rem;
     font-size: 3rem;
     text-align: center;
+    color: #333333;
 }
+
 
 .intro-summary {
     width: 60%;
     margin: auto;
     padding-bottom: 60px;
     text-align: center;
+    color: #333333;
 }
 
 .list-item {
     cursor: pointer;
+    text-transform: uppercase;
+}
+
+.ui.header.menu-head {
+  font-size: 2.2rem;
+  padding-top: 20px;
+}
+
+.list-item {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+.ballot-dashboard {
+  margin-top: 50px;
+}
+
+.success-icon {
+  padding-right: 30px;
+}
+
+i.map-icon {
+  margin-bottom: 18px;
+  margin-right: 10px;
 }

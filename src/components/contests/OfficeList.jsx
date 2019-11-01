@@ -8,19 +8,19 @@ const OfficeList = props => {
 
   if (offices) {
     return (
-      <Menu pointing fluid vertical>
-        <h1 className='candidates-h1'>Candidates</h1>
+      <div className='ui fluid vertical menu'>
+        <h1 className='ui blue header center aligned menu-head'>Candidates</h1>
+
         {offices.map(x => (
           <OfficeItem
             key={x.office}
             office={x.office}
             district={x.district.name}
             candidates={x.candidates}
-            onListItemSelect={props.onListItemSelect}
-            voterInfo={props.voterInfo}
+            voterResult={props.voterResult}
           />
         ))}
-      </Menu>
+      </div>
     );
   } else {
     return null;

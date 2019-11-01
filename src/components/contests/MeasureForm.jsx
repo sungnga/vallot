@@ -1,28 +1,23 @@
 import React from 'react';
-import { Menu, Card } from 'semantic-ui-react';
-
 import MeasureDetail from './MeasureDetail';
+import { Segment } from 'semantic-ui-react';
 
 const MeasureForm = props => {
-  const measures = props.voterResult.contests;
+  const election = props.voterResult.election;
 
-  if (measures) {
+
+  if (election) {
     return (
-      <div>
-        <h1 className='candidates-h1'>Local Measures</h1>
-
-        {measures.map(x => (
-          <Card fluid>
-            <MeasureDetail
-              key={x.referendumTitle}
-              refTitle={x.referendumTitle}
-              refSubtitle={x.referendumSubtitle}
-              refText={x.referendumText}
-              onListItemSelect={props.onListItemSelect}
-              voterInfo={props.voterInfo}
-            />
-          </Card>
-        ))}
+      <div fluid>
+        <Segment className='ui center aligned'>
+                <h3><i class="thumbs up icon success-icon"></i>
+                    Success! You have one upcoming election ballot.</h3>
+          <h1 className='ui teal header'>{election.name}</h1>
+          <h2 className='ui teal header'>{election.electionDay}</h2>
+        </Segment>
+        <Segment>
+          <MeasureDetail />
+        </Segment>
       </div>
     );
   } else {
